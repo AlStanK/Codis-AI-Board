@@ -56,32 +56,56 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
 }
 
 :root {
   color-scheme: light;
-  --radius: 0;
+  /* ---- Codis brand colors ------------------------------------ */
+  --codis-orange:       #E76033;
+  --codis-orange-600:   #D14E22;
+  --codis-orange-100:   #FCE5DA;
+  --codis-orange-50:    #FEF3EE;
+  --codis-purple:       #7828C8;
+  --codis-purple-100:   #EAD6F9;
+  --codis-black:        #1A1A1A;
+  --codis-white:        #FFFFFF;
+  --gray-50: #FAFAFA; --gray-100: #F4F4F5; --gray-200: #E4E4E7;
+  --gray-300: #D4D4D8; --gray-400: #A1A1AA; --gray-500: #71717A;
+  --gray-600: #52525B; --gray-700: #3F3F46; --gray-800: #27272A; --gray-900: #18181B;
+  --success: #16A34A; --success-bg: #DCFCE7;
+  --warning: #F59E0B; --warning-bg: #FEF3C7;
+  --danger:  #DC2626; --danger-bg:  #FEE2E2;
+  --info:    #2563EB; --info-bg:    #DBEAFE;
+  --font-sans:    "e-Ukraine", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "e-Ukraine Head", "e-Ukraine", system-ui, sans-serif;
+  --font-logo:    "e-Ukraine Logo", "e-Ukraine Head", sans-serif;
+  --shadow-xs: 0 1px 2px rgba(20,20,20,.04);
+  --shadow-sm: 0 1px 3px rgba(20,20,20,.06), 0 1px 2px rgba(20,20,20,.04);
+  --shadow-md: 0 4px 12px rgba(20,20,20,.06), 0 2px 4px rgba(20,20,20,.04);
+  --shadow-lg: 0 12px 32px rgba(20,20,20,.10), 0 4px 8px rgba(20,20,20,.04);
+  --shadow-orange: 0 8px 24px rgba(231,96,51,.25);
+  --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: #E76033;
+  --primary-foreground: #FFFFFF;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: #FEF3EE;
+  --accent-foreground: #D14E22;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: rgba(231, 96, 51, 0.20);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -89,12 +113,12 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #E76033;
+  --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: rgba(231, 96, 51, 0.20);
   --chip-match-title-bg: oklch(0.97 0.02 265);
   --chip-match-title-fg: oklch(0.4 0.13 265);
   --chip-match-title-border: oklch(0.85 0.05 265);
@@ -136,12 +160,12 @@
   --chart-5: oklch(0.645 0.246 16.439);
   --sidebar: oklch(0.145 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #E76033;
+  --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar-ring: rgba(231, 96, 51, 0.20);
   --chip-match-title-bg: oklch(0.27 0.04 265 / 0.5);
   --chip-match-title-fg: oklch(0.78 0.10 265);
   --chip-match-title-border: oklch(0.4 0.06 265);
@@ -159,6 +183,12 @@
 @layer base {
   * {
     @apply border-border;
+  }
+  body {
+    font-family: var(--font-sans);
+  }
+  h1, h2 {
+    font-family: var(--font-display);
   }
   html {
     height: 100%;
