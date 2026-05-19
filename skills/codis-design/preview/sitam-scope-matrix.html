@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:18px 22px;background:var(--surface);font-family:var(--font-sans);color:var(--fg);}
+  .eyebrow{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--fg-subtle);text-transform:uppercase;font-weight:600;margin-bottom:12px;}
+  .grid{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:0;font-size:11px;}
+  .h{font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--fg-subtle);letter-spacing:.06em;text-transform:uppercase;padding:8px 10px;background:var(--bg-muted);border-bottom:1px solid var(--border);}
+  .role{font-family:var(--font-mono);font-size:11px;color:var(--fg);font-weight:500;padding:9px 10px;border-bottom:1px solid var(--divider);}
+  .cell{padding:8px 10px;border-bottom:1px solid var(--divider);border-left:1px solid var(--divider);display:flex;align-items:center;}
+  .pill{padding:2px 7px;border-radius:5px;font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.04em;}
+  .full{background:#DCFCE7;color:#15803D;}
+  .partial{background:#FEF3C7;color:#92400E;}
+  .none{background:#F4F4F5;color:#71717A;}
+  .deny{background:#FEE2E2;color:#B91C1C;}
+  .grant{background:#EAD6F9;color:#5B1F9C;}
+</style></head>
+<body>
+<div class="eyebrow">M10 · Scope engine — RBAC + 8 axes</div>
+<div class="grid">
+  <div class="h">Role</div><div class="h">OT_SCOPE</div><div class="h">RISK_SCOPE</div><div class="h">FIELD_SCOPE</div>
+
+  <div class="role">CISO</div>
+  <div class="cell"><span class="pill grant">grant</span></div>
+  <div class="cell"><span class="pill full">full</span></div>
+  <div class="cell"><span class="pill full">full</span></div>
+
+  <div class="role">SECURITY_ADMIN</div>
+  <div class="cell"><span class="pill grant">grant</span></div>
+  <div class="cell"><span class="pill full">full</span></div>
+  <div class="cell"><span class="pill full">full</span></div>
+
+  <div class="role">DATA_OWNER</div>
+  <div class="cell"><span class="pill partial">opt-in</span></div>
+  <div class="cell"><span class="pill partial">aggregate</span></div>
+  <div class="cell"><span class="pill partial">partial</span></div>
+
+  <div class="role">AUDITOR</div>
+  <div class="cell"><span class="pill deny">deny</span></div>
+  <div class="cell"><span class="pill partial">aggregate</span></div>
+  <div class="cell"><span class="pill none">masked</span></div>
+
+  <div class="role">SYSADMIN</div>
+  <div class="cell"><span class="pill deny">deny</span></div>
+  <div class="cell"><span class="pill none">none</span></div>
+  <div class="cell"><span class="pill none">masked</span></div>
+</div>
+</body></html>

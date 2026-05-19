@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:18px 22px;background:var(--surface);font-family:var(--font-sans);color:var(--fg);}
+  .row{display:flex;align-items:center;gap:8px;}
+  .step{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;min-width:0;}
+  .dot{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+       font-family:var(--font-mono);font-size:11px;font-weight:700;border:1px solid var(--border);background:var(--bg-muted);color:var(--fg-muted);}
+  .dot.done{background:#1A1A1A;color:#fff;border-color:#1A1A1A;}
+  .dot.curr{background:var(--codis-orange);color:#fff;border-color:var(--codis-orange);box-shadow:0 0 0 4px #FEF3EE;}
+  .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.04em;color:var(--fg-muted);text-align:center;line-height:1.25;text-transform:uppercase;font-weight:600;}
+  .lbl.curr{color:var(--codis-orange);}
+  .bar{flex:1;height:2px;background:var(--border);margin:0 -2px;align-self:flex-start;margin-top:14px;}
+  .bar.done{background:#1A1A1A;}
+  .eyebrow{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--fg-subtle);text-transform:uppercase;font-weight:600;margin-bottom:10px;}
+</style></head>
+<body>
+<div class="eyebrow">M01 · Asset lifecycle FSM</div>
+<div class="row">
+  <div class="step"><div class="dot done">1</div><div class="lbl">Plan</div></div>
+  <div class="bar done"></div>
+  <div class="step"><div class="dot done">2</div><div class="lbl">Reg</div></div>
+  <div class="bar done"></div>
+  <div class="step"><div class="dot done">3</div><div class="lbl">Approval</div></div>
+  <div class="bar done"></div>
+  <div class="step"><div class="dot done">4</div><div class="lbl">Risk Asmt</div></div>
+  <div class="bar done"></div>
+  <div class="step"><div class="dot done">5</div><div class="lbl">Risk Mgmt</div></div>
+  <div class="bar done"></div>
+  <div class="step"><div class="dot curr">6</div><div class="lbl curr">Active Maint</div></div>
+  <div class="bar"></div>
+  <div class="step"><div class="dot">7</div><div class="lbl">Decommiss</div></div>
+  <div class="bar"></div>
+  <div class="step"><div class="dot">8</div><div class="lbl">Archived</div></div>
+</div>
+</body></html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Codis · Asset Management</title>
+<link rel="icon" href="../../assets/favicon-32.png">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  html,body,#root{height:100%;margin:0;}
+  body{background:var(--bg-muted);color:var(--fg);font-family:var(--font-sans);}
+  *{box-sizing:border-box;}
+  button{font-family:inherit;}
+  input,select{font-family:inherit;}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="Atoms.jsx"></script>
+<script type="text/babel" src="FsmStepper.jsx"></script>
+<script type="text/babel" src="RiskScore.jsx"></script>
+<script type="text/babel" src="Sidebar.jsx"></script>
+<script type="text/babel" src="TopBar.jsx"></script>
+<script type="text/babel" src="DashboardScreen.jsx"></script>
+<script type="text/babel" src="AssetListScreen.jsx"></script>
+<script type="text/babel" src="AssetPassportScreen.jsx"></script>
+<script type="text/babel" src="WorkOrdersScreen.jsx"></script>
+<script type="text/babel" src="RiskRegisterScreen.jsx"></script>
+<script type="text/babel" src="ScopeMatrixScreen.jsx"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const TITLES = {
+  dashboard:  { t: 'Dashboard',     s: 'Overview · last 30 days' },
+  assets:     { t: 'Assets',        s: '1,284 records · 4 categories' },
+  workorders: { t: 'Work orders',   s: 'Service desk · 47 open' },
+  passport:   { t: 'Asset passport',s: '' },
+  risks:      { t: 'Risk register',  s: 'M03 · 47 active scenarios' },
+  scope:      { t: 'Scope policies', s: 'M10 · 8-axis matrix' },
+  map:        { t: 'Map',           s: 'Geographic view' },
+  inventory:  { t: 'Inventory',     s: 'Module' },
+  service:    { t: 'Service desk',  s: 'Module' },
+  reports:    { t: 'Reports',       s: 'Module' },
+  team:       { t: 'Team',          s: '12 members' },
+  settings:   { t: 'Settings',      s: '' },
+};
+
+function Placeholder({ title }) {
+  useEffect(() => { window.lucide && window.lucide.createIcons(); });
+  return (
+    <div style={{ padding: 60, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', textAlign: 'center', color: 'var(--fg-muted)' }}>
+      <div style={{ width: 64, height: 64, borderRadius: 16, background: 'var(--accent-soft)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
+        <i data-lucide="layers" style={{ width: 30, height: 30, strokeWidth: 1.5 }}></i>
+      </div>
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 600, color: 'var(--fg)', marginBottom: 6 }}>{title}</div>
+      <div style={{ maxWidth: 400, fontSize: 14 }}>This module is part of the Codis ecosystem and would surface here in a real deployment. Not implemented in the UI kit.</div>
+    </div>
+  );
+}
+
+function App() {
+  const [route, setRoute] = useState('dashboard');
+  const [asset, setAsset] = useState(null);
+
+  const openAsset = (a) => { setAsset(a); setRoute('passport'); };
+  const goBack = () => setRoute('assets');
+
+  let body;
+  if (route === 'dashboard')  body = <DashboardScreen />;
+  else if (route === 'assets') body = <AssetListScreen onOpenAsset={openAsset} />;
+  else if (route === 'workorders') body = <WorkOrdersScreen />;
+  else if (route === 'risks')   body = <RiskRegisterScreen />;
+  else if (route === 'scope')   body = <ScopeMatrixScreen />;
+  else if (route === 'passport')   body = <AssetPassportScreen asset={asset} onBack={goBack} />;
+  else                            body = <Placeholder title={TITLES[route]?.t || route} />;
+
+  const headTitle = route === 'passport' ? (asset?.name || 'Asset passport') : TITLES[route]?.t;
+  const headSub   = route === 'passport' ? (asset?.id) : TITLES[route]?.s;
+
+  return (
+    <div style={{ display: 'flex', height: '100%' }}>
+      <Sidebar active={route === 'passport' ? 'assets' : route} onNav={setRoute} />
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        <TopBar title={headTitle} subtitle={headSub} />
+        <main style={{ flex: 1, overflow: 'auto', background: 'var(--bg-muted)' }}>
+          {body}
+        </main>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+setTimeout(() => window.lucide && window.lucide.createIcons(), 200);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-sans);padding:24px;color:var(--fg);}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field label{display:block;font-size:12px;font-weight:600;color:var(--fg);margin-bottom:6px;}
+  .input,.select{width:100%;font-family:var(--font-sans);font-size:14px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--fg);box-sizing:border-box;}
+  .input:focus,.select:focus{outline:none;border-color:var(--codis-orange);box-shadow:var(--ring);}
+  .hint{font-size:12px;color:var(--fg-muted);margin-top:6px;}
+  .row{display:flex;gap:8px;align-items:center;font-size:14px;}
+  .check{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border-strong);display:inline-flex;align-items:center;justify-content:center;}
+  .check.on{background:var(--codis-orange);border-color:var(--codis-orange);color:#fff;font-size:12px;}
+  .switch{width:40px;height:22px;background:var(--codis-orange);border-radius:999px;position:relative;}
+  .switch::after{content:'';position:absolute;top:2px;left:20px;width:18px;height:18px;background:#fff;border-radius:50%;}
+</style></head>
+<body>
+<div class="grid">
+  <div class="field">
+    <label>Asset name</label>
+    <input class="input" placeholder="e.g. Tower 7B" value="Базова станція №142"/>
+    <div class="hint">Use the operator's internal naming.</div>
+  </div>
+  <div class="field">
+    <label>Category</label>
+    <select class="select"><option>Telecom · Base station</option></select>
+  </div>
+  <div class="row"><span class="check on">✓</span><span>Schedule preventive maintenance</span></div>
+  <div class="row"><span class="switch"></span><span>Notify dispatch on status change</span></div>
+</div>
+</body></html>

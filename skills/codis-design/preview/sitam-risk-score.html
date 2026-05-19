@@ -1,0 +1,46 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:18px 22px;background:var(--surface);font-family:var(--font-sans);color:var(--fg);}
+  .eyebrow{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--fg-subtle);text-transform:uppercase;font-weight:600;margin-bottom:14px;}
+  .row{display:flex;gap:18px;align-items:stretch;}
+  .card{flex:1;border:1px solid var(--border);border-radius:10px;padding:14px 16px;background:var(--surface);}
+  .num{font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;letter-spacing:-.02em;}
+  .lbl{font-family:var(--font-mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-subtle);margin-bottom:6px;}
+  .sub{font-size:11px;color:var(--fg-muted);margin-top:6px;font-family:var(--font-mono);}
+  .pill{display:inline-block;padding:2px 7px;border-radius:5px;font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.04em;margin-top:8px;}
+  .green{color:#15803D;}.amber{color:#EA580C;}.red{color:#DC2626;}
+  .pgreen{background:#DCFCE7;color:#15803D;}.pamber{background:#FEF3C7;color:#92400E;}.pred{background:#FEE2E2;color:#B91C1C;}
+  .formula{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);background:var(--bg-muted);padding:8px 10px;border-radius:6px;margin-top:10px;}
+</style></head>
+<body>
+<div class="eyebrow">M03 · Risk score = probability × max(C,I,A) × 5</div>
+<div class="row">
+  <div class="card">
+    <div class="lbl">Critical · OT</div>
+    <div class="num red">22.5</div>
+    <div class="sub">p=0.90 · CIA 5/5/5</div>
+    <div class="pill pred">CRITICAL · ≥ 15</div>
+  </div>
+  <div class="card">
+    <div class="lbl">High</div>
+    <div class="num amber">12.5</div>
+    <div class="sub">p=0.50 · CIA 4/5/5</div>
+    <div class="pill pamber">HIGH · 10–14.9</div>
+  </div>
+  <div class="card">
+    <div class="lbl">Medium</div>
+    <div class="num amber">7.5</div>
+    <div class="sub">p=0.30 · CIA 5/5/5</div>
+    <div class="pill pamber">MEDIUM · 5–9.9</div>
+  </div>
+  <div class="card">
+    <div class="lbl">Low · accepted</div>
+    <div class="num green">2.5</div>
+    <div class="sub">p=0.10 · CIA 5/5/5</div>
+    <div class="pill pgreen">LOW · &lt; 5</div>
+  </div>
+</div>
+<div class="formula">score = round(probability × max(c, i, a) × 5, 1) · INV-02 · DB trigger on AssetCIA / RiskScenario change</div>
+</body></html>

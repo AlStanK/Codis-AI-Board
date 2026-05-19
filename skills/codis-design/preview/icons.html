@@ -1,0 +1,144 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<!-- Four modern icon families -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css">
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-sans);padding:24px;color:var(--fg);}
+  .set{padding:18px 20px;border:1px solid var(--border);border-radius:12px;margin-bottom:14px;background:var(--surface);}
+  .set + .set{margin-top:0;}
+  .head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
+  .name{font-family:var(--font-display);font-size:15px;font-weight:600;color:var(--fg);letter-spacing:-0.005em;}
+  .tagline{font-size:11.5px;color:var(--fg-subtle);font-family:var(--font-mono);}
+  .pill{margin-left:auto;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:5px;background:var(--bg-subtle);color:var(--fg-muted);font-weight:500;font-family:var(--font-mono);}
+  .row{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;align-items:end;}
+  .ico{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--fg);padding:8px 4px;border-radius:7px;}
+  .ico:hover{background:var(--bg-muted);}
+  .lbl{font-size:9.5px;color:var(--fg-subtle);font-family:var(--font-mono);text-align:center;line-height:1.2;}
+
+  /* normalize sizing */
+  .ico i, .ico svg{display:block;font-size:22px;line-height:1;width:22px;height:22px;}
+  .ico [data-lucide]{stroke-width:1.5;color:var(--fg);}
+  .ico .ti{font-size:22px;color:var(--fg);}
+  .ico .ph{font-size:22px;color:var(--fg);}
+  .ico .ph-duotone{color:var(--fg);}
+  .ico .iconoir{font-size:22px;color:var(--fg);}
+</style></head>
+<body>
+
+<div class="set">
+  <div class="head">
+    <span class="name">Lucide</span>
+    <span class="tagline">current default · 1.5 px outline, rounded caps</span>
+    <span class="pill" style="background:#FEF3EE;color:#D14E22;">current</span>
+  </div>
+  <div class="row">
+    <div class="ico"><i data-lucide="search"></i><div class="lbl">search</div></div>
+    <div class="ico"><i data-lucide="layers"></i><div class="lbl">layers</div></div>
+    <div class="ico"><i data-lucide="package"></i><div class="lbl">package</div></div>
+    <div class="ico"><i data-lucide="map-pin"></i><div class="lbl">map-pin</div></div>
+    <div class="ico"><i data-lucide="wrench"></i><div class="lbl">wrench</div></div>
+    <div class="ico"><i data-lucide="qr-code"></i><div class="lbl">qr</div></div>
+    <div class="ico"><i data-lucide="filter"></i><div class="lbl">filter</div></div>
+    <div class="ico"><i data-lucide="calendar"></i><div class="lbl">calendar</div></div>
+    <div class="ico"><i data-lucide="bell"></i><div class="lbl">bell</div></div>
+    <div class="ico"><i data-lucide="bar-chart-3"></i><div class="lbl">chart</div></div>
+    <div class="ico"><i data-lucide="users"></i><div class="lbl">users</div></div>
+    <div class="ico"><i data-lucide="settings"></i><div class="lbl">settings</div></div>
+  </div>
+</div>
+
+<div class="set">
+  <div class="head">
+    <span class="name">Tabler</span>
+    <span class="tagline">cleaner geometry · 2 px stroke · 4 200+ glyphs</span>
+    <span class="pill">option</span>
+  </div>
+  <div class="row">
+    <div class="ico"><i class="ti ti-search"></i><div class="lbl">search</div></div>
+    <div class="ico"><i class="ti ti-stack-2"></i><div class="lbl">layers</div></div>
+    <div class="ico"><i class="ti ti-package"></i><div class="lbl">package</div></div>
+    <div class="ico"><i class="ti ti-map-pin"></i><div class="lbl">map-pin</div></div>
+    <div class="ico"><i class="ti ti-tool"></i><div class="lbl">wrench</div></div>
+    <div class="ico"><i class="ti ti-qrcode"></i><div class="lbl">qr</div></div>
+    <div class="ico"><i class="ti ti-filter"></i><div class="lbl">filter</div></div>
+    <div class="ico"><i class="ti ti-calendar"></i><div class="lbl">calendar</div></div>
+    <div class="ico"><i class="ti ti-bell"></i><div class="lbl">bell</div></div>
+    <div class="ico"><i class="ti ti-chart-bar"></i><div class="lbl">chart</div></div>
+    <div class="ico"><i class="ti ti-users"></i><div class="lbl">users</div></div>
+    <div class="ico"><i class="ti ti-settings"></i><div class="lbl">settings</div></div>
+  </div>
+</div>
+
+<div class="set">
+  <div class="head">
+    <span class="name">Phosphor · regular</span>
+    <span class="tagline">contemporary humanist · weight variants (thin → fill)</span>
+    <span class="pill">option</span>
+  </div>
+  <div class="row">
+    <div class="ico"><i class="ph ph-magnifying-glass"></i><div class="lbl">search</div></div>
+    <div class="ico"><i class="ph ph-stack"></i><div class="lbl">layers</div></div>
+    <div class="ico"><i class="ph ph-package"></i><div class="lbl">package</div></div>
+    <div class="ico"><i class="ph ph-map-pin"></i><div class="lbl">map-pin</div></div>
+    <div class="ico"><i class="ph ph-wrench"></i><div class="lbl">wrench</div></div>
+    <div class="ico"><i class="ph ph-qr-code"></i><div class="lbl">qr</div></div>
+    <div class="ico"><i class="ph ph-funnel"></i><div class="lbl">filter</div></div>
+    <div class="ico"><i class="ph ph-calendar-blank"></i><div class="lbl">calendar</div></div>
+    <div class="ico"><i class="ph ph-bell"></i><div class="lbl">bell</div></div>
+    <div class="ico"><i class="ph ph-chart-bar"></i><div class="lbl">chart</div></div>
+    <div class="ico"><i class="ph ph-users"></i><div class="lbl">users</div></div>
+    <div class="ico"><i class="ph ph-gear"></i><div class="lbl">settings</div></div>
+  </div>
+</div>
+
+<div class="set">
+  <div class="head">
+    <span class="name">Phosphor · duotone</span>
+    <span class="tagline">soft fill + outline · brand-friendly accent layer</span>
+    <span class="pill">option · expressive</span>
+  </div>
+  <div class="row" style="color:#E76033">
+    <div class="ico"><i class="ph-duotone ph-magnifying-glass"></i><div class="lbl">search</div></div>
+    <div class="ico"><i class="ph-duotone ph-stack"></i><div class="lbl">layers</div></div>
+    <div class="ico"><i class="ph-duotone ph-package"></i><div class="lbl">package</div></div>
+    <div class="ico"><i class="ph-duotone ph-map-pin"></i><div class="lbl">map-pin</div></div>
+    <div class="ico"><i class="ph-duotone ph-wrench"></i><div class="lbl">wrench</div></div>
+    <div class="ico"><i class="ph-duotone ph-qr-code"></i><div class="lbl">qr</div></div>
+    <div class="ico"><i class="ph-duotone ph-funnel"></i><div class="lbl">filter</div></div>
+    <div class="ico"><i class="ph-duotone ph-calendar-blank"></i><div class="lbl">calendar</div></div>
+    <div class="ico"><i class="ph-duotone ph-bell"></i><div class="lbl">bell</div></div>
+    <div class="ico"><i class="ph-duotone ph-chart-bar"></i><div class="lbl">chart</div></div>
+    <div class="ico"><i class="ph-duotone ph-users"></i><div class="lbl">users</div></div>
+    <div class="ico"><i class="ph-duotone ph-gear"></i><div class="lbl">settings</div></div>
+  </div>
+</div>
+
+<div class="set">
+  <div class="head">
+    <span class="name">Iconoir</span>
+    <span class="tagline">light, geometric · 1.5 px stroke · MIT</span>
+    <span class="pill">option</span>
+  </div>
+  <div class="row">
+    <div class="ico"><i class="iconoir-search"></i><div class="lbl">search</div></div>
+    <div class="ico"><i class="iconoir-layers"></i><div class="lbl">layers</div></div>
+    <div class="ico"><i class="iconoir-package"></i><div class="lbl">package</div></div>
+    <div class="ico"><i class="iconoir-map-pin"></i><div class="lbl">map-pin</div></div>
+    <div class="ico"><i class="iconoir-wrench"></i><div class="lbl">wrench</div></div>
+    <div class="ico"><i class="iconoir-qr-code"></i><div class="lbl">qr</div></div>
+    <div class="ico"><i class="iconoir-filter"></i><div class="lbl">filter</div></div>
+    <div class="ico"><i class="iconoir-calendar"></i><div class="lbl">calendar</div></div>
+    <div class="ico"><i class="iconoir-bell"></i><div class="lbl">bell</div></div>
+    <div class="ico"><i class="iconoir-stats-up-square"></i><div class="lbl">chart</div></div>
+    <div class="ico"><i class="iconoir-group"></i><div class="lbl">users</div></div>
+    <div class="ico"><i class="iconoir-settings"></i><div class="lbl">settings</div></div>
+  </div>
+</div>
+
+<script>lucide.createIcons();</script>
+</body></html>

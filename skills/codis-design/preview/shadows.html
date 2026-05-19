@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--bg-muted);font-family:var(--font-sans);padding:32px;color:var(--fg);}
+  .row{display:flex;gap:28px;align-items:flex-start;justify-content:space-between;}
+  .item{flex:1;display:flex;flex-direction:column;align-items:center;gap:14px;}
+  .box{width:120px;height:80px;background:var(--surface);border-radius:14px;border:1px solid var(--border);}
+  .lbl{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);text-align:center;}
+  .num{font-size:12px;font-weight:600;color:var(--fg);}
+</style></head>
+<body>
+  <div class="row">
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-xs)"></div><div class="num">XS</div><div class="lbl">--shadow-xs</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-sm)"></div><div class="num">SM · resting card</div><div class="lbl">--shadow-sm</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-md)"></div><div class="num">MD · hover/float</div><div class="lbl">--shadow-md</div></div>
+    <div class="item"><div class="box" style="box-shadow:var(--shadow-lg)"></div><div class="num">LG · modal</div><div class="lbl">--shadow-lg</div></div>
+    <div class="item"><div class="box" style="background:var(--codis-orange);box-shadow:var(--shadow-orange);border:none;"></div><div class="num">Signature glow</div><div class="lbl">--shadow-orange</div></div>
+  </div>
+</body></html>

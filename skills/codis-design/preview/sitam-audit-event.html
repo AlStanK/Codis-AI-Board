@@ -1,0 +1,32 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:18px 22px;background:var(--surface);font-family:var(--font-sans);color:var(--fg);}
+  .eyebrow{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:var(--fg-subtle);text-transform:uppercase;font-weight:600;margin-bottom:12px;}
+  table{width:100%;border-collapse:collapse;font-size:11.5px;}
+  th{text-align:left;padding:8px 10px;background:var(--bg-muted);font-family:var(--font-mono);font-size:9.5px;font-weight:700;color:var(--fg-subtle);letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--border);}
+  td{padding:9px 10px;border-bottom:1px solid var(--divider);font-family:var(--font-mono);}
+  .ts{color:var(--fg-muted);}
+  .pill{display:inline-block;padding:2px 7px;border-radius:5px;font-family:var(--font-mono);font-size:9.5px;font-weight:600;letter-spacing:.04em;}
+  .orange{background:#FEF3EE;color:#D14E22;}
+  .green{background:#DCFCE7;color:#15803D;}
+  .red{background:#FEE2E2;color:#B91C1C;}
+  .blue{background:#DBEAFE;color:#1D4ED8;}
+  .purple{background:#EAD6F9;color:#5B1F9C;}
+  .actor{color:var(--fg);font-family:var(--font-sans);font-size:11.5px;}
+  .footer{font-family:var(--font-mono);font-size:10px;color:var(--fg-subtle);margin-top:8px;display:flex;justify-content:space-between;}
+</style></head>
+<body>
+<div class="eyebrow">M04 · Audit log — append-only · INV-05</div>
+<table>
+  <thead><tr><th>Time</th><th>Action code</th><th>Actor</th><th>Diff</th></tr></thead>
+  <tbody>
+    <tr><td class="ts">14:32:08</td><td><span class="pill purple">RISK_ACCEPTED</span></td><td class="actor">CISO</td><td>RSK-0421-003 · ACCEPT signed</td></tr>
+    <tr><td class="ts">14:18:51</td><td><span class="pill orange">ASSET_STATE_CHANGED</span></td><td class="actor">V.Kovalenko</td><td>RISK_MGMT → ACTIVE_MAINTENANCE</td></tr>
+    <tr><td class="ts">13:55:22</td><td><span class="pill red">SCOPE_BYPASS_ATTEMPT</span></td><td class="actor">tester_2</td><td>OT_SCOPE / DC-2 Boryspil · denied</td></tr>
+    <tr><td class="ts">13:41:09</td><td><span class="pill green">ACCESS_APPROVED</span></td><td class="actor">SECURITY_ADMIN</td><td>tmp-OT_SCOPE · 4h</td></tr>
+  </tbody>
+</table>
+<div class="footer"><span>UPDATE/DELETE forbidden at DB level</span><span>hash-chain ✓</span></div>
+</body></html>

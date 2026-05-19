@@ -1,0 +1,33 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-sans);padding:24px;color:var(--fg);}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;}
+  .dot{width:6px;height:6px;border-radius:50%;}
+  .b-active{background:#DCFCE7;color:#15803D;} .b-active .dot{background:#16A34A;}
+  .b-warn{background:#FEF3C7;color:#92400E;} .b-warn .dot{background:#F59E0B;}
+  .b-down{background:#FEE2E2;color:#B91C1C;} .b-down .dot{background:#DC2626;}
+  .b-info{background:#DBEAFE;color:#1D4ED8;} .b-info .dot{background:#2563EB;}
+  .b-orange{background:#FEF3EE;color:#D14E22;} .b-orange .dot{background:#E76033;}
+  .b-grey{background:#F4F4F5;color:#52525B;} .b-grey .dot{background:#71717A;}
+  .b-purple{background:#EAD6F9;color:#5B1F9C;} .b-purple .dot{background:#7828C8;}
+  .b-outline{background:transparent;color:var(--fg);border:1px solid var(--border);}
+  .label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-subtle);width:100%;margin-top:10px;}
+</style></head>
+<body>
+  <div class="label">Status</div>
+  <div class="row">
+    <span class="badge b-active"><span class="dot"></span>Active</span>
+    <span class="badge b-warn"><span class="dot"></span>Maintenance due</span>
+    <span class="badge b-down"><span class="dot"></span>Offline</span>
+    <span class="badge b-info"><span class="dot"></span>In review</span>
+  </div>
+  <div class="label">Category tags</div>
+  <div class="row">
+    <span class="badge b-orange"><span class="dot"></span>Telecom</span>
+    <span class="badge b-purple"><span class="dot"></span>Critical</span>
+    <span class="badge b-grey"><span class="dot"></span>Archived</span>
+    <span class="badge b-outline">v2.4</span>
+    <span class="badge b-outline">SKU-1284</span>
+  </div>
+</body></html>

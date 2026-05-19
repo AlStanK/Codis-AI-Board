@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;background:var(--bg);font-family:var(--font-sans);padding:20px;}
+  .row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .item{border-radius:var(--radius-md);border:1px solid var(--border);overflow:hidden;}
+  .pair{display:flex;height:60px;}
+  .fill{flex:2;}
+  .tint{flex:1;}
+  .meta{padding:10px 12px;background:var(--surface);}
+  .name{font-size:13px;font-weight:600;color:var(--fg);}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--fg-muted);margin-top:2px;}
+</style></head>
+<body>
+  <div class="row">
+    <div class="item">
+      <div class="pair"><div class="fill" style="background:#4F8E5A"></div><div class="tint" style="background:#EAF1E8"></div></div>
+      <div class="meta"><div class="name">Success</div><div class="hex">#4F8E5A · #EAF1E8</div></div>
+    </div>
+    <div class="item">
+      <div class="pair"><div class="fill" style="background:#C68A3D"></div><div class="tint" style="background:#F4E9D4"></div></div>
+      <div class="meta"><div class="name">Warning</div><div class="hex">#C68A3D · #F4E9D4</div></div>
+    </div>
+    <div class="item">
+      <div class="pair"><div class="fill" style="background:#B85450"></div><div class="tint" style="background:#F2DEDA"></div></div>
+      <div class="meta"><div class="name">Danger</div><div class="hex">#B85450 · #F2DEDA</div></div>
+    </div>
+    <div class="item">
+      <div class="pair"><div class="fill" style="background:#5577A6"></div><div class="tint" style="background:#E1E7EF"></div></div>
+      <div class="meta"><div class="name">Info</div><div class="hex">#5577A6 · #E1E7EF</div></div>
+    </div>
+  </div>
+</body></html>
