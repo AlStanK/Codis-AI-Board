@@ -1,3 +1,21 @@
+/* ---- Codis brand webfonts: e-Ukraine ----------------------------
+   Files served from /fonts/ (Vite public directory)
+------------------------------------------------------------------- */
+@font-face { font-family:"e-Ukraine"; font-weight:100; font-style:normal; font-display:swap; src:url("/fonts/e-Ukraine-Thin.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine"; font-weight:200; font-style:normal; font-display:swap; src:url("/fonts/e-Ukraine-UltraLight.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine"; font-weight:300; font-style:normal; font-display:swap; src:url("/fonts/e-Ukraine-Light.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine"; font-weight:400; font-style:normal; font-display:swap; src:url("/fonts/e-Ukraine-Regular.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine"; font-weight:500; font-style:normal; font-display:swap; src:url("/fonts/e-Ukraine-Medium.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine"; font-weight:700; font-style:normal; font-display:swap; src:url("/fonts/e-Ukraine-Bold.otf") format("opentype"); }
+
+@font-face { font-family:"e-Ukraine Head"; font-weight:100; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-Thin.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine Head"; font-weight:200; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-UltraLight.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine Head"; font-weight:300; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-Light.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine Head"; font-weight:400; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-Regular.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine Head"; font-weight:500; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-Medium.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine Head"; font-weight:700; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-Bold.otf") format("opentype"); }
+@font-face { font-family:"e-Ukraine Logo"; font-weight:400; font-style:normal; font-display:swap; src:url("/fonts/e-UkraineHead-LOGO.otf") format("opentype"); }
+
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
