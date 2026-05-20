@@ -53,6 +53,20 @@ export function Sidebar() {
 
   return (
     <aside className="w-full h-full min-h-0 border-r border-border bg-background flex flex-col">
+      {/* App logo */}
+      <div className="flex items-center gap-2.5 px-4 h-12 shrink-0 border-b border-border">
+        <img src="/favicon-32.png" alt="" className="w-5 h-5 rounded-[5px]" />
+        <img
+          src="/logo-dark.svg"
+          alt="Codis AI Board"
+          className="h-4 dark:hidden"
+        />
+        <img
+          src="/logo-white.svg"
+          alt="Codis AI Board"
+          className="h-4 hidden dark:block"
+        />
+      </div>
       {/* Top bar: Company name (bold) + Search — aligned with top sections (no visible border) */}
       <div className="flex items-center gap-1 px-3 h-12 shrink-0">
         <SidebarCompanyMenu />
