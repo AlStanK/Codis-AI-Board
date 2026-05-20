@@ -81,6 +81,35 @@
   --font-sans:    "e-Ukraine", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "e-Ukraine Head", "e-Ukraine", system-ui, sans-serif;
   --font-logo:    "e-Ukraine Logo", "e-Ukraine Head", sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* ---- Type scale ---- */
+  --fs-xs:   12px;  --fs-sm:  14px;  --fs-base: 16px; --fs-md: 18px; --fs-lg: 20px;
+  --fs-xl:   24px;  --fs-2xl: 32px;  --fs-3xl:  40px; --fs-4xl: 56px; --fs-5xl: 72px;
+  --lh-tight: 1.15; --lh-snug: 1.3; --lh-base: 1.5; --lh-loose: 1.7;
+  --tr-tight: -0.02em; --tr-snug: -0.01em; --tr-normal: 0; --tr-wide: 0.04em; --tr-eyebrow: 0.08em;
+  --w-ultralight: 200; --w-light: 300; --w-regular: 400; --w-medium: 500; --w-semibold: 600; --w-bold: 700;
+  /* ---- Spacing (4-pt grid) ---- */
+  --space-1: 4px;  --space-2: 8px;   --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --space-6: 24px; --space-8: 32px;  --space-10: 40px; --space-12: 48px;
+  --space-16: 64px; --space-20: 80px;
+  /* ---- Motion ---- */
+  --ease-out:    cubic-bezier(.2,.7,.2,1);
+  --ease-in-out: cubic-bezier(.4,0,.2,1);
+  --dur-fast: 120ms; --dur-base: 200ms; --dur-slow: 320ms;
+  /* ---- Semantic light-theme tokens (mirrors Tailwind vars) ---- */
+  --bg:           var(--codis-white);
+  --bg-muted:     var(--gray-50);
+  --bg-subtle:    var(--gray-100);
+  --surface:      var(--codis-white);
+  --surface-hover: var(--gray-50);
+  --fg:           var(--codis-black);
+  --fg-muted:     var(--gray-600);
+  --fg-subtle:    var(--gray-500);
+  --fg-on-accent: var(--codis-white);
+  --divider:      var(--gray-100);
+  --border-strong: var(--gray-300);
+  --accent-hover: var(--codis-orange-600);
+  --accent-soft:  var(--codis-orange-50);
   --shadow-xs: 0 1px 2px rgba(20,20,20,.04);
   --shadow-sm: 0 1px 3px rgba(20,20,20,.06), 0 1px 2px rgba(20,20,20,.04);
   --shadow-md: 0 4px 12px rgba(20,20,20,.06), 0 2px 4px rgba(20,20,20,.04);
@@ -140,19 +169,20 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  /* Codis brand: primary stays orange in dark mode — it is the identity, not a neutral */
+  --primary: #E76033;
+  --primary-foreground: #FFFFFF;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --accent: rgba(231,96,51,.12);
+  --accent-foreground: #FCE5DA;
   --destructive: oklch(0.637 0.237 25.331);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.269 0 0);
   --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --ring: rgba(231, 96, 51, 0.20);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -166,6 +196,21 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: rgba(231, 96, 51, 0.20);
+  /* Dark semantic tokens */
+  --bg:           #1A1A1A;
+  --bg-muted:     #111113;
+  --bg-subtle:    #1E1E22;
+  --surface:      #202024;
+  --surface-hover: #27272A;
+  --fg:           #FFFFFF;
+  --fg-muted:     #B7B7BD;
+  --fg-subtle:    #71717A;
+  --divider:      #28282C;
+  --border-strong: #3F3F46;
+  --accent-soft:  rgba(231,96,51,.12);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,.5);
   --chip-match-title-bg: oklch(0.27 0.04 265 / 0.5);
   --chip-match-title-fg: oklch(0.78 0.10 265);
   --chip-match-title-border: oklch(0.4 0.06 265);
@@ -178,6 +223,77 @@
   --chip-match-identifier-bg: var(--muted);
   --chip-match-identifier-fg: var(--muted-foreground);
   --chip-match-identifier-border: var(--border);
+}
+
+/* =========================================================
+   Codis Design System — semantic type classes
+   Source: colors_and_type.css (codis-design-system)
+   ========================================================= */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: clamp(40px, 6vw, var(--fs-5xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+}
+.t-h1 {
+  font-family: var(--font-display);
+  font-weight: var(--w-bold);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--w-semibold);
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+}
+.t-h3 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-medium);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+}
+.t-h4 {
+  font-family: var(--font-sans);
+  font-weight: var(--w-medium);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+}
+.t-body {
+  font-family: var(--font-sans);
+  font-weight: var(--w-regular);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+}
+.t-lead {
+  font-size: var(--fs-md);
+  line-height: var(--lh-base);
+  color: var(--fg-muted);
+  font-weight: var(--w-regular);
+}
+.t-small {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+  color: var(--fg-muted);
+}
+.t-caption {
+  font-size: var(--fs-xs);
+  line-height: var(--lh-base);
+  color: var(--fg-subtle);
+}
+.t-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: var(--w-semibold);
+  letter-spacing: var(--tr-eyebrow);
+  text-transform: uppercase;
+  color: var(--codis-orange);
+}
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
 }
 
 @layer base {
